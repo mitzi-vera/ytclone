@@ -31,8 +31,34 @@ const ProfilePage = () => {
         ))}
       </View>
 
+      {/* Profile Tab */}
       <View style={styles.profileTab}>
-        <Text>Hello</Text>
+        <Image source={require('../assets/profile_picture.png')} style={styles.bigProfilePic}/>
+        <View>
+          <Text style={[styles.darkModeText, {fontSize: 26, fontWeight: "bold"}]}>George Cutiepie</Text>
+          <View style={{flexDirection: 'row'}}>
+            <Text style={styles.darkModeText}>@cprg303A_ytClone</Text>
+            <Text style={styles.darkModeText}> • </Text>
+            <TouchableOpacity><Text style={styles.darkModeText}> View channel ›</Text></TouchableOpacity>
+          </View>
+        </View>
+      </View>
+
+      <View style={[styles.sampleTab, {height:40}]}>
+        <Text style={{color:"white"}}>Tabs</Text>
+      </View>
+      
+      <View style={[styles.sampleTab, {flex:1}]}>
+        <Text style={{color:"white"}}>Content</Text>
+        <View style={[styles.sampleTab, {height:200}]}>
+          <Text style={{color:"white"}}>History</Text>
+        </View>
+        <View style={[styles.sampleTab, {height:200}]}>
+          <Text style={{color:"white"}}>Playlist</Text>
+        </View>
+        <View style={[styles.sampleTab]}>
+          <Text style={{color:"white"}}>Your videos</Text>
+        </View>
       </View>
       
       {/* Bottom NavBar starts Here */}
@@ -77,7 +103,6 @@ const styles = StyleSheet.create({
     bottom: 0,
     borderTopWidth: 1,
     borderColor: "#e1dddc",
-    backgroundColor: "orange" //remove 
   },
   topNavBar: {
     flexDirection: "row",
@@ -86,7 +111,6 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "5%",
     marginTop: 30,
-    backgroundColor: "orange" //remove 
   },
   navLabels: {
     color: "#ffffff",
@@ -112,11 +136,31 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
   // 20250202 BT
-  profileTab: {
-    backgroundColor: "green",
-    width: "100%",
-    flex: 1,
+
+  //sampleTab only for visual purposes. remove and add your own style.
+  sampleTab: {
+    borderColor: "yellow",
+    borderWidth: 2,
+    width: "100%"
   },
+  profileTab: {
+    flexDirection: 'row',
+    width: "100%",
+    height: 120,
+    alignItems: 'center'
+  },
+  bigProfilePic: {
+    height : 80,
+    width : 80,
+    borderRadius : 100,
+    borderWidth: 2,
+    borderColor: 'grey',
+    margin: 20
+  },
+  darkModeText: {
+    color: '#FFFF',
+    fontSize: 14
+  }
 });
 
 export default ProfilePage;
