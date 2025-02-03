@@ -15,51 +15,49 @@ const NavItem = ({ iconSource, label, style, onPress }) => (
 const ProfilePage = () => {
   return (
     <View style={styles.container}>
-      {/*Please add your code here*/}
-
-      {/*NAVBAR CODE STARTS HERE*/}
       {/* Top NavBar starts Here */}
-      <View style={styles.container}>
-        {/* Top NavBar */}
-        <View style={styles.topNavBar}>
-          {[
-            { icon: require("../assets/cast.png") },
-            { icon: require("../assets/notifs.png") },
-            { icon: require("../assets/search.png") },
-            { icon: require("../assets/settings.png") },
-          ].map((item, index) => (
-            <NavItem
-              key={index}
-              iconSource={item.icon}
-              style={styles.iconSpacing}
-            />
-          ))}
-        </View>
+      <View style={styles.topNavBar}>
+        {[
+          { icon: require("../assets/cast.png") },
+          { icon: require("../assets/notifs.png") },
+          { icon: require("../assets/search.png") },
+          { icon: require("../assets/settings.png") },
+        ].map((item, index) => (
+          <NavItem
+            key={index}
+            iconSource={item.icon}
+            style={styles.iconSpacing}
+          />
+        ))}
+      </View>
 
-        {/* Bottom NavBar starts Here */}
-        <View style={{ ...styles.navBar, ...styles.bottomNavBar }}>
-          {[
-            { icon: require("../assets/home.png"), label: "Home" },
-            { icon: require("../assets/shorts.png"), label: "Shorts" },
-            {
-              icon: require("../assets/plus.png"),
-              iconStyle: { width: 45, height: 45 },
-            },
-            { icon: require("../assets/subs.png"), label: "Subscriptions" },
-            {
-              icon: require("../assets/profile_picture.png"),
-              label: "You",
-              iconStyle: styles.profilePic,
-            },
-          ].map((item, index) => (
-            <NavItem
-              key={index}
-              iconSource={item.icon}
-              label={item.label}
-              style={item.iconStyle}
-            />
-          ))}
-        </View>
+      <View style={styles.profileTab}>
+        <Text>Hello</Text>
+      </View>
+      
+      {/* Bottom NavBar starts Here */}
+      <View style={{ ...styles.navBar, ...styles.bottomNavBar }}>
+        {[
+          { icon: require("../assets/home.png"), label: "Home" },
+          { icon: require("../assets/shorts.png"), label: "Shorts" },
+          {
+            icon: require("../assets/plus.png"),
+            iconStyle: { width: 45, height: 45 },
+          },
+          { icon: require("../assets/subs.png"), label: "Subscriptions" },
+          {
+            icon: require("../assets/profile_picture.png"),
+            label: "You",
+            iconStyle: styles.profilePic,
+          },
+        ].map((item, index) => (
+          <NavItem
+            key={index}
+            iconSource={item.icon}
+            label={item.label}
+            style={item.iconStyle}
+          />
+        ))}
       </View>
     </View>
   );
@@ -72,26 +70,23 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   navBar: {
-    flex: 1,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-evenly",
     width: "100%",
-    position: "absolute",
     bottom: 0,
     borderTopWidth: 1,
     borderColor: "#e1dddc",
+    backgroundColor: "orange" //remove 
   },
   topNavBar: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "flex-end",
     width: "100%",
-    height: "10%",
-    position: "absolute",
-    top: 0,
-    marginTop: 10,
-    right: 0,
+    height: "5%",
+    marginTop: 30,
+    backgroundColor: "orange" //remove 
   },
   navLabels: {
     color: "#ffffff",
@@ -115,6 +110,12 @@ const styles = StyleSheet.create({
   },
   iconSpacing: {
     marginHorizontal: 10,
+  },
+  // 20250202 BT
+  profileTab: {
+    backgroundColor: "green",
+    width: "100%",
+    flex: 1,
   },
 });
 
