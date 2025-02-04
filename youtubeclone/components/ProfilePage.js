@@ -1,5 +1,6 @@
 import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import PlaylistPage from "./PlaylistPage";
+import HistoryPage  from "./HistoryPage";
 
 {
   /*NavItem Component = reusable and will be used for the top and bottom navbars*/
@@ -57,17 +58,20 @@ const ProfilePage = () => {
       <View style={[styles.sampleTab, { height: 40 }]}>
         <Text style={{ color: "white" }}>Tabs</Text>
       </View>
-
       <View style={[styles.sampleTab, { flex: 1 }]}>
-        <Text style={{ color: "white" }}>Content</Text>
-        <View style={[styles.sampleTab, { height: 200 }]}>
-          <Text style={{ color: "white" }}>History</Text>
+        <Text style={{ color: "white" }}></Text>
+
+        {/* History Tab */}
+        <View style={[{ height: 200 }]}>
+          <HistoryPage />
         </View>
+
+
         {/* <View style={[styles.sampleTab, { height: 200 }]}>
           <Text style={{ color: "white" }}>Playlist</Text>
         </View> */}
 
-        <View style={[styles.sampleTab, { height: 200, paddingVertical: 0 }]}>
+        <View style={[{height: 200, paddingVertical: 0 }]}>
           <Text style={{ color: "white", marginBottom: 0 }}></Text>
           <PlaylistPage />
         </View>
