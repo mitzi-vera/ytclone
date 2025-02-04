@@ -1,6 +1,9 @@
 import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import PlaylistPage from "./PlaylistPage";
 import HistoryPage from "./HistoryPage";
+import OptionsTab from "./OptionsTab";
+import OptionsBottom from "./OptionsBottom";
+import { ScrollView } from "react-native";
 
 {
   /*NavItem Component = reusable and will be used for the top and bottom navbars*/
@@ -33,49 +36,54 @@ const ProfilePage = () => {
         ))}
       </View>
 
-      {/* Profile Tab */}
-      <View style={styles.profileTab}>
-        <Image
-          source={require("../assets/profile_picture.png")}
-          style={styles.bigProfilePic}
-        />
-        <View>
-          <Text
-            style={[styles.darkModeText, { fontSize: 26, fontWeight: "bold" }]}
-          >
-            George Cutiepie
-          </Text>
-          <View style={{ flexDirection: "row" }}>
-            <Text style={styles.darkModeText}>@cprg303A_ytClone</Text>
-            <Text style={styles.darkModeText}> • </Text>
-            <TouchableOpacity>
-              <Text style={styles.darkModeText}> View channel ›</Text>
-            </TouchableOpacity>
+      <ScrollView contentContainerStyle={styles.scrollContainer}>
+        {/* Profile Tab */}
+        <View style={styles.profileTab}>
+          <Image
+            source={require("../assets/profile_picture.png")}
+            style={styles.bigProfilePic}
+          />
+          <View>
+            <Text
+              style={[
+                styles.darkModeText,
+                { fontSize: 26, fontWeight: "bold" },
+              ]}
+            >
+              George Cutiepie
+            </Text>
+            <View style={{ flexDirection: "row" }}>
+              <Text style={styles.darkModeText}>@cprg303A_ytClone</Text>
+              <Text style={styles.darkModeText}> • </Text>
+              <TouchableOpacity>
+                <Text style={styles.darkModeText}> View channel ›</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
-      </View>
 
-      <View style={[styles.sampleTab, { height: 40 }]}>
-        <Text style={{ color: "white" }}>Tabs</Text>
-      </View>
-      <View style={[styles.sampleTab, { flex: 1 }]}>
-        <Text style={{ color: "white" }}></Text>
+        {/* Options Tab */}
+        <View style={[{ height: 70 }]}>
+          <OptionsTab />
+        </View>
 
         {/* History Tab */}
-        <View style={[{ height: 200 }]}>
-          <HistoryPage />
-        </View>
+        <View style={[{ flex: 1 }]}>
+          <View style={[{ height: 200 }]}>
+            <HistoryPage />
+          </View>
 
-        {/* Playlist Tab */}
-        <View style={[{ height: 200, paddingVertical: 0 }]}>
-          <Text style={{ color: "white", marginBottom: 0 }}></Text>
-          <PlaylistPage />
-        </View>
+          {/* Playlist Tab */}
+          <View style={[{ height: 200, paddingVertical: 0 }]}>
+            <Text style={{ color: "white", marginBottom: 0 }}></Text>
+            <PlaylistPage />
+          </View>
 
-        <View style={[styles.sampleTab]}>
-          <Text style={{ color: "white" }}>Your videos</Text>
+          <View>
+            <OptionsBottom />
+          </View>
         </View>
-      </View>
+      </ScrollView>
 
       {/* Bottom NavBar starts Here */}
       <View style={{ ...styles.navBar, ...styles.bottomNavBar }}>
@@ -176,6 +184,9 @@ const styles = StyleSheet.create({
   darkModeText: {
     color: "#FFFF",
     fontSize: 14,
+  },
+  scrollContainer: {
+    paddingBottom: 80,
   },
 });
 
