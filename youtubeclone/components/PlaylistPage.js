@@ -7,6 +7,8 @@ import {
   ScrollView,
 } from "react-native";
 
+import Ionicons from "react-native-vector-icons/Ionicons";
+
 const PlaylistPage = () => {
   // Sample Playlist Data
   const playlistData = [
@@ -57,6 +59,9 @@ const PlaylistPage = () => {
             </TouchableOpacity>
           ))}
         </ScrollView>
+        <TouchableOpacity>
+          <Ionicons name="ellipsis-vertical" size={16} color="white" />
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -65,12 +70,13 @@ const PlaylistPage = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#000",
-    paddingHorizontal: 10,
+    backgroundColor: "#101010",
+    paddingHorizontal: 5,
     justifyContent: "center",
+    marginTop: 0,
   },
   playlistBox: {
-    backgroundColor: "#000",
+    backgroundColor: "#101010",
     padding: 10,
     borderRadius: 10,
   },
