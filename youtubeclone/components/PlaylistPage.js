@@ -50,18 +50,28 @@ const PlaylistPage = () => {
           {playlistData.map((item) => (
             <TouchableOpacity key={item.id} style={styles.playlistItem}>
               <Image source={item.thumbnail} style={styles.playlistThumbnail} />
-              <Text style={styles.playlistTitle} numberOfLines={1}>
-                {item.title}
-              </Text>
-              <Text style={styles.playlistSubText}>
-                Private • {item.videoCount} videos
-              </Text>
+              {/* <TouchableOpacity>
+                <Ionicons name="ellipsis-vertical" size={16} color="white" />
+              </TouchableOpacity> */}
+              <View style={styles.rowContainer}>
+                <Ionicons
+                  name="ellipsis-vertical"
+                  size={16}
+                  color="white"
+                  style={styles.ellipsisIcon}
+                />
+                <View style={styles.textContainer}>
+                  <Text style={styles.playlistTitle} numberOfLines={1}>
+                    {item.title}
+                  </Text>
+                  <Text style={styles.playlistSubText}>
+                    Private • {item.videoCount} videos
+                  </Text>
+                </View>
+              </View>
             </TouchableOpacity>
           ))}
         </ScrollView>
-        <TouchableOpacity>
-          <Ionicons name="ellipsis-vertical" size={16} color="white" />
-        </TouchableOpacity>
       </View>
     </View>
   );
@@ -109,13 +119,26 @@ const styles = StyleSheet.create({
   },
   playlistTitle: {
     color: "white",
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: "bold",
     marginTop: 5,
   },
   playlistSubText: {
     color: "gray",
     fontSize: 12,
+  },
+  rowContainer: {
+    flexDirection: "row",
+    alignItems: "center", // Aligns icon and text in one line
+    marginTop: 5,
+  },
+
+  ellipsisIcon: {
+    marginRight: 8, // Space between the icon and text
+  },
+
+  textContainer: {
+    flex: 1, // Ensures the text takes available space
   },
 });
 
