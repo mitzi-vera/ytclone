@@ -1,4 +1,5 @@
 import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
+import PlaylistPage from "./PlaylistPage";
 
 {
   /*NavItem Component = reusable and will be used for the top and bottom navbars*/
@@ -33,34 +34,49 @@ const ProfilePage = () => {
 
       {/* Profile Tab */}
       <View style={styles.profileTab}>
-        <Image source={require('../assets/profile_picture.png')} style={styles.bigProfilePic}/>
+        <Image
+          source={require("../assets/profile_picture.png")}
+          style={styles.bigProfilePic}
+        />
         <View>
-          <Text style={[styles.darkModeText, {fontSize: 26, fontWeight: "bold"}]}>George Cutiepie</Text>
-          <View style={{flexDirection: 'row'}}>
+          <Text
+            style={[styles.darkModeText, { fontSize: 26, fontWeight: "bold" }]}
+          >
+            George Cutiepie
+          </Text>
+          <View style={{ flexDirection: "row" }}>
             <Text style={styles.darkModeText}>@cprg303A_ytClone</Text>
             <Text style={styles.darkModeText}> • </Text>
-            <TouchableOpacity><Text style={styles.darkModeText}> View channel ›</Text></TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.darkModeText}> View channel ›</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
 
-      <View style={[styles.sampleTab, {height:40}]}>
-        <Text style={{color:"white"}}>Tabs</Text>
+      <View style={[styles.sampleTab, { height: 40 }]}>
+        <Text style={{ color: "white" }}>Tabs</Text>
       </View>
-      
-      <View style={[styles.sampleTab, {flex:1}]}>
-        <Text style={{color:"white"}}>Content</Text>
-        <View style={[styles.sampleTab, {height:200}]}>
-          <Text style={{color:"white"}}>History</Text>
+
+      <View style={[styles.sampleTab, { flex: 1 }]}>
+        <Text style={{ color: "white" }}>Content</Text>
+        <View style={[styles.sampleTab, { height: 200 }]}>
+          <Text style={{ color: "white" }}>History</Text>
         </View>
-        <View style={[styles.sampleTab, {height:200}]}>
-          <Text style={{color:"white"}}>Playlist</Text>
+        {/* <View style={[styles.sampleTab, { height: 200 }]}>
+          <Text style={{ color: "white" }}>Playlist</Text>
+        </View> */}
+
+        <View style={[styles.sampleTab, { height: 200, paddingVertical: 0 }]}>
+          <Text style={{ color: "white", marginBottom: 0 }}></Text>
+          <PlaylistPage />
         </View>
+
         <View style={[styles.sampleTab]}>
-          <Text style={{color:"white"}}>Your videos</Text>
+          <Text style={{ color: "white" }}>Your videos</Text>
         </View>
       </View>
-      
+
       {/* Bottom NavBar starts Here */}
       <View style={{ ...styles.navBar, ...styles.bottomNavBar }}>
         {[
@@ -141,26 +157,26 @@ const styles = StyleSheet.create({
   sampleTab: {
     borderColor: "yellow",
     borderWidth: 2,
-    width: "100%"
+    width: "100%",
   },
   profileTab: {
-    flexDirection: 'row',
+    flexDirection: "row",
     width: "100%",
     height: 120,
-    alignItems: 'center'
+    alignItems: "center",
   },
   bigProfilePic: {
-    height : 80,
-    width : 80,
-    borderRadius : 100,
+    height: 80,
+    width: 80,
+    borderRadius: 100,
     borderWidth: 2,
-    borderColor: 'grey',
-    margin: 20
+    borderColor: "grey",
+    margin: 20,
   },
   darkModeText: {
-    color: '#FFFF',
-    fontSize: 14
-  }
+    color: "#FFFF",
+    fontSize: 14,
+  },
 });
 
 export default ProfilePage;
