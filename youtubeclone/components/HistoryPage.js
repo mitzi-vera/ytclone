@@ -30,7 +30,7 @@ export default function HistoryPage() {
   return (
     <View style ={styles.container}>
       <View style ={{flexDirection: 'row', justifyContent: 'space-between'}}>
-    <Text style={styles.text}> History </Text>
+    <Text style={styles.text}>History</Text>
     <TouchableOpacity>
       <Text style={styles.viewAllText}>View all</Text>
     </TouchableOpacity>
@@ -65,7 +65,7 @@ export default function HistoryPage() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#000",
+    backgroundColor: "#101010",
     paddingHorizontal: 15,
     justifyContent: "center",
     marginTop: 10,
@@ -77,8 +77,8 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   scrollContainer: {
-    paddingTop: 0,
-    backgroundColor: "#000",
+    paddingTop: 5,
+    backgroundColor: "#101010",
   },
   videoCard: {
     width: 140,
