@@ -13,7 +13,7 @@ const PlaylistPage = () => {
   const playlistData = [
     {
       id: "1",
-      title: "Cotillion",
+      title: "Liked Video",
       thumbnail: require("../assets/react_native.png"),
       videoCount: 4,
     },
