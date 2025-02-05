@@ -10,7 +10,6 @@ import {
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 const PlaylistPage = () => {
-  // Sample Playlist Data
   const playlistData = [
     {
       id: "1",
@@ -50,9 +49,6 @@ const PlaylistPage = () => {
           {playlistData.map((item) => (
             <TouchableOpacity key={item.id} style={styles.playlistItem}>
               <Image source={item.thumbnail} style={styles.playlistThumbnail} />
-              {/* <TouchableOpacity>
-                <Ionicons name="ellipsis-vertical" size={16} color="white" />
-              </TouchableOpacity> */}
               <View style={styles.rowContainer}>
                 <Ionicons
                   name="ellipsis-vertical"
@@ -129,16 +125,16 @@ const styles = StyleSheet.create({
   },
   rowContainer: {
     flexDirection: "row",
-    alignItems: "center", // Aligns icon and text in one line
+    alignItems: "center",
     marginTop: 5,
   },
 
   ellipsisIcon: {
-    marginRight: 8, // Space between the icon and text
+    marginRight: 8,
   },
 
   textContainer: {
-    flex: 1, // Ensures the text takes available space
+    flex: 1,
   },
 });
 
