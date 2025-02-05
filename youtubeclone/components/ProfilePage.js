@@ -1,4 +1,11 @@
-import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  Alert,
+} from "react-native";
 import PlaylistPage from "./PlaylistPage";
 import HistoryPage from "./HistoryPage";
 import OptionsTab from "./OptionsTab";
@@ -17,7 +24,9 @@ const NavItem = ({ iconSource, label, style, onPress }) => (
   </TouchableOpacity>
 );
 
-const ProfilePage = () => {
+const alertPress = () => alert("This is an alert!");
+
+function ProfilePage() {
   return (
     <View style={styles.container}>
       {/* Top NavBar starts Here */}
@@ -88,30 +97,50 @@ const ProfilePage = () => {
       {/* Bottom NavBar starts Here */}
       <View style={{ ...styles.navBar, ...styles.bottomNavBar }}>
         {[
-          { icon: require("../assets/home.png"), label: "Home" },
-          { icon: require("../assets/shorts.png"), label: "Shorts" },
+          {
+            icon: require("../assets/home.png"),
+            label: "Home",
+          },
+          {
+            icon: require("../assets/shorts.png"),
+            label: "Shorts",
+          },
           {
             icon: require("../assets/plus.png"),
-            iconStyle: { width: 45, height: 45 },
+            iconStyle: { marginBottom: "40%" },
           },
-          { icon: require("../assets/subs.png"), label: "Subscriptions" },
+          {
+            icon: require("../assets/subs.png"),
+            label: "Subscriptions",
+          },
           {
             icon: require("../assets/profile_picture.png"),
-            label: "You",
+            label: "Alert!",
             iconStyle: styles.profilePic,
+            alert: true,
           },
         ].map((item, index) => (
-          <NavItem
-            key={index}
-            iconSource={item.icon}
-            label={item.label}
-            style={item.iconStyle}
-          />
+          <View
+            style={{
+              flex: 1,
+              height: 60,
+              flexDirection: "row",
+              justifyContent: "center",
+            }}
+          >
+            <NavItem
+              key={index}
+              iconSource={item.icon}
+              label={item.label}
+              style={item.iconStyle}
+              onPress={item.alert ? alertPress : null}
+            />
+          </View>
         ))}
       </View>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -119,10 +148,13 @@ const styles = StyleSheet.create({
     width: "100%",
     flex: 1,
   },
+  navContainer: {
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: "center",
+  },
   navBar: {
     flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-evenly",
     width: "100%",
     bottom: 0,
     borderTopWidth: 1,
@@ -138,7 +170,7 @@ const styles = StyleSheet.create({
   },
   navLabels: {
     color: "#ffffff",
-    fontSize: 12,
+    fontSize: 10,
     textAlign: "center",
   },
   navIcons: {
@@ -147,7 +179,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   bottomNavBar: {
-    height: "8%",
+    height: "10%",
   },
   profilePic: {
     height: 35,
