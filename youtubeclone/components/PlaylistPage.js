@@ -50,12 +50,6 @@ const PlaylistPage = () => {
             <TouchableOpacity key={item.id} style={styles.playlistItem}>
               <Image source={item.thumbnail} style={styles.playlistThumbnail} />
               <View style={styles.rowContainer}>
-                <Ionicons
-                  name="ellipsis-vertical"
-                  size={16}
-                  color="white"
-                  style={styles.ellipsisIcon}
-                />
                 <View style={styles.textContainer}>
                   <Text style={styles.playlistTitle} numberOfLines={1}>
                     {item.title}
@@ -64,6 +58,12 @@ const PlaylistPage = () => {
                     Private • {item.videoCount} videos
                   </Text>
                 </View>
+                <Ionicons
+                  name="ellipsis-vertical"
+                  size={16}
+                  color="white"
+                  style={styles.ellipsisIcon}
+                />
               </View>
             </TouchableOpacity>
           ))}
