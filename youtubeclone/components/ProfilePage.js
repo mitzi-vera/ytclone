@@ -71,6 +71,7 @@ function ProfilePage() {
           </View>
         </View>
 
+<<<<<<< Updated upstream
         {/* Options Tab */}
         <View style={[{ height: 70 }]}>
           <OptionsTab />
@@ -91,6 +92,17 @@ function ProfilePage() {
           <View>
             <OptionsBottom />
           </View>
+=======
+      <View style={[styles.sampleTab, { height: 40 }]}>
+        <Text style={{ color: "white" }}>Tabs</Text>
+      </View>
+
+      <View style={[styles.sampleTab, { flex: 1 }]}>
+        <Text style={{ color: "white" }}></Text>
+        {/* History Tab */}
+        <View style={[{ height: 200}]}>
+          <HistoryPage />
+>>>>>>> Stashed changes
         </View>
       </ScrollView>
 
